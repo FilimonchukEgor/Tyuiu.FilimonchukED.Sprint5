@@ -19,10 +19,19 @@ namespace Tyuiu.FilimonchukED.Sprint5.Task3.V14.Lib
             y = 4 * Math.Pow(x, 3) / (Math.Pow(x, 3) - 1);
             y = Math.Round(y, 3);
 
-            using (FileStream fs = new FileStream(path, FileMode.Create, FileAccess.Write))
-            using (StreamWriter writer = new StreamWriter(fs, Encoding.UTF8))
+            try
             {
-                writer.Write(BitConverter.GetBytes(y));
+                // Создаем поток для записи с кодировкой UTF-8
+                using (FileStream fs = new FileStream(path, FileMode.Create, FileAccess.Write))
+                using (StreamWriter writer = new StreamWriter(fs, Encoding.UTF8))
+                {
+                    // Записываем строку в бинарный файл
+                    writer.Write(y);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Произошла ошибка при записи в файл: {ex.Message}");
             }
             return path;
         }
