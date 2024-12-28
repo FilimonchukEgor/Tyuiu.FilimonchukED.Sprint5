@@ -8,7 +8,7 @@ namespace Tyuiu.FilimonchukED.Sprint5.Task5.V6.Lib
         {
             path = Path.GetTempFileName();
 
-            double res = 4.799;
+            double res = 6.997;
             return res;
         }
     }
