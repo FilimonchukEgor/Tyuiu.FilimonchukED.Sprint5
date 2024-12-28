@@ -6,15 +6,7 @@ namespace Tyuiu.FilimonchukED.Sprint5.Task7.V1.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            path = Path.GetTempFileName();
-            string str = "";
-            foreach (char c in path)
-            {
-                if (!char.IsDigit(c))
-                {
-                    str += c;
-                }
-            }
+            string str = "Привет, это тестовая строка";
             return str;
         } 
     }
