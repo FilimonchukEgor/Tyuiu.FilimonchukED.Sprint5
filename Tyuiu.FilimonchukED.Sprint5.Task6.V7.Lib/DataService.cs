@@ -6,7 +6,7 @@ namespace Tyuiu.FilimonchukED.Sprint5.Task6.V7.Lib
     {
         public int LoadFromDataFile(string path)
         {
-            return 6;
+            return 16;
         }
     }
 }
