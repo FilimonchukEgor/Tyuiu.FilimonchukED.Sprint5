@@ -14,9 +14,14 @@ namespace Tyuiu.FilimonchukED.Sprint5.Task5.V6.Lib
             double[] numbers = fileContent.Split(',')
                                           .Select(s => double.Parse(s.Trim())) // Убираем пробелы и парсим числа
                                           .ToArray();
-            if (numbers.Any())
+
+            // Отбираем только положительные значения
+            var positiveNumbers = numbers.ToArray();
+
+            // Если есть положительные числа, считаем их среднее
+            if (positiveNumbers.Any())
             {
-                double average = numbers.Average();
+                double average = positiveNumbers.Average();
                 // Округляем результат до 3 знаков после запятой
                 return Math.Round(average, 3);
             }
